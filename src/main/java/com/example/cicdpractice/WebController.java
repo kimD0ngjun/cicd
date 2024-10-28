@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 @Controller
 public class WebController {
 
@@ -35,8 +38,10 @@ public class WebController {
     }
 
     @GetMapping("/env")
-    public ResponseEntity<String> env() {
-        return ResponseEntity.ok(env);
+    public ResponseEntity<?> env() {
+        Map<String, String> response = new TreeMap<>();
+        response.put("env", env);
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/message")
