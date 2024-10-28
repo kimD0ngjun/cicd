@@ -1,6 +1,7 @@
 package com.example.cicdpractice;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,16 @@ public class WebController {
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("commonMessage", commonMessage);
-        model.addAttribute("env", env);
         model.addAttribute("address", address);
         model.addAttribute("port", port);
         model.addAttribute("serverName", serverName);
 
         return "index";
+    }
+
+    @GetMapping("/env")
+    public ResponseEntity<String> env() {
+        return ResponseEntity.ok(env);
     }
 
     @PostMapping("/message")
