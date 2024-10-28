@@ -39,9 +39,9 @@ public class WebController {
 
     @GetMapping("/env")
     public ResponseEntity<?> env() {
-        Map<String, String> response = new TreeMap<>();
-        response.put("env", env);
-        return ResponseEntity.ok(response);
+//        Map<String, String> response = new TreeMap<>();
+//        response.put("env", env);
+        return ResponseEntity.ok(env);
     }
 
     @PostMapping("/message")
