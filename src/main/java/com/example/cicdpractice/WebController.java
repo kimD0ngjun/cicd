@@ -20,8 +20,12 @@ public class WebController {
     @Value("${serverName}")
     private String serverName;
 
+    @Value("${common.message}")
+    private String commonMessage;
+
     @GetMapping("/")
     public String index(Model model) {
+        model.addAttribute("commonMessage", commonMessage);
         model.addAttribute("env", env);
         model.addAttribute("address", address);
         model.addAttribute("port", port);
