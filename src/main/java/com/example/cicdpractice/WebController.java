@@ -8,17 +8,25 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class WebController {
 
-    @Value("${custom.setting}")
-    private String setting;
+    @Value("${server.env}")
+    private String env;
+
+    @Value("${server.address}")
+    private String address;
+
+    @Value("${server.port}")
+    private String port;
+
+    @Value("${serverName}")
+    private String serverName;
 
     @GetMapping("/")
-    public String index() {
-        return "index";
-    }
+    public String index(Model model) {
+        model.addAttribute("env", env);
+        model.addAttribute("address", address);
+        model.addAttribute("port", port);
+        model.addAttribute("serverName", serverName);
 
-    @PostMapping("/setting")
-    public String setting(Model model) {
-        model.addAttribute("setting", setting);
         return "index";
     }
 
