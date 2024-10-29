@@ -12,8 +12,8 @@ public class WebController {
     @Value("${server.env}")
     private String env;
 
-    @Value("${server.address}")
-    private String address;
+//    @Value("${server.address}")
+//    private String address;
 
     @Value("${server.port}")
     private String port;
@@ -27,7 +27,7 @@ public class WebController {
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("commonMessage", commonMessage);
-        model.addAttribute("address", address);
+//        model.addAttribute("address", address);
         model.addAttribute("port", port);
         model.addAttribute("serverName", serverName);
 
@@ -36,14 +36,16 @@ public class WebController {
 
     @GetMapping("/env")
     public ResponseEntity<?> env() {
-//        Map<String, String> response = new TreeMap<>();
-//        response.put("env", env);
         return ResponseEntity.ok(env);
     }
 
-    @PostMapping("/message")
+    @PostMapping("/")
     public String message(@RequestParam("inputMessage") String inputMessage, Model model) {
+        model.addAttribute("commonMessage", commonMessage);
+        model.addAttribute("port", port);
+        model.addAttribute("serverName", serverName);
         model.addAttribute("message", inputMessage);
+
         return "index";
     }
 }
