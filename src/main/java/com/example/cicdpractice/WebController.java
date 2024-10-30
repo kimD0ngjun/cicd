@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 1. 2024.10.30 오후 3시 34분 현재 동작 컨테이너명: blue
+ * 2. 2024.10.30 오후 3시 40~50분 현재 동작 컨테이너명: green
+ *
  */
 @Controller
 public class WebController {
