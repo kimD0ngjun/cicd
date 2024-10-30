@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.*;
 /**
  * 1. 2024.10.30 오후 3시 34분 현재 동작 컨테이너명: blue
  * 2. 2024.10.30 오후 3시 40~50분 현재 동작 컨테이너명: green
- *
+ * 3. 2024.10.30 2번쨰 시점의 green 컨테이너가 동작이 중지되지 않음 어라?
+ * * 한 번 컨테이너를 직접 삭제하고 해볼까
+ *  * * 1시간 후에 다시 확인하니 됐네????
+ * 4. 2024.10.30 오후 5시 4분 현재 동작 컨테이너명: blue
  */
 @Controller
 public class WebController {
