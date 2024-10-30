@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 1. 2024.10.30 오후 3시 34분 현재 동작 컨테이너명: blue
+ */
 @Controller
 public class WebController {
 
